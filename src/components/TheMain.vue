@@ -3,7 +3,7 @@
         <div id="moviesList"> 
             <!-- STAMPARE CARD PER OGNI FILM -->
             <ul class="list-unstyled">
-                <li></li>
+                <li>{{textInput}}</li>
             </ul>
         </div>
 
@@ -14,10 +14,11 @@
 </template>
 
 <script>
-
-
 export default {
     components: {
+    },
+    props: {
+        textInput: String,
     },
 }
 </script>

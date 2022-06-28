@@ -1,7 +1,7 @@
 <template>
   <div>
     <TheHeader @searchMovie="onSearchMovie"></TheHeader>
-    <TheMain></TheMain>
+    <TheMain :text-input="textInput"></TheMain>
   </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
   data() {
         return {
             movieList: [],
+            textInput: null,
         }
     },
     methods: {
@@ -32,8 +33,8 @@ export default {
                 this.movieList = resp.data.results;
             })
         },
-        onSearchMovie(){
-
+        onSearchMovie(textSearch){
+          this.textInput = textSearch;
         }
     },
     mounted() {
