@@ -3,7 +3,7 @@
         <input type="text" class="form-control"
         placeholder="search movie" 
         aria-describedby="button-addon2"
-        v-model="textSearch">
+        v-model="searchText">
         <button class="btn btn-outline-secondary" type="button" 
         id="button-addon2"
         @click="onSearchClick">Search</button>
@@ -18,12 +18,12 @@ export default {
     },
     data() {
         return {
-            textSearch: "",
+            searchText: "",
         }
     },
     methods: {
         onSearchClick() {
-            this.$emit("searchMovie", this.textSearch);
+            this.$emit("searchMovie", this.searchText);
         }
     },
 }
