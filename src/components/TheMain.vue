@@ -3,7 +3,8 @@
         <div id="moviesList"> 
             <!-- STAMPARE CARD PER OGNI FILM -->
             <ul class="list-unstyled">
-                <li>{{moviesList}}</li>
+                <li v-for="(movie, i) in moviesList" :key="i">{{movie.title}}</li>
+                <li v-for="(movie, i) in moviesList" :key="i">{{movie.vote_average}}</li>
             </ul>
         </div>
 
