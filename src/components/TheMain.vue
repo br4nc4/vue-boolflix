@@ -14,32 +14,11 @@
 </template>
 
 <script>
-import axios from "axios";
+
 
 export default {
     components: {
     },
-    data() {
-        return {
-            movieList: [],
-        }
-    },
-    methods: {
-        fetchData() {
-            axios.get("https://api.themoviedb.org/3/search/movie", {
-                params: {
-                    api_key: "d43e4619fd253e9bace6c00412169652",
-                    query: onInput,
-                },
-            })
-            .then((resp) => {
-                this.movieList = resp.data.results;
-            })
-        }
-    },
-    mounted() {
-        this.fetchData();
-    }
 }
 </script>
 
