@@ -6,11 +6,12 @@
         v-model="textSearch">
         <button class="btn btn-outline-secondary" type="button" 
         id="button-addon2"
-        @click="onSearchClick">search</button>
+        @click="onSearchClick">Search</button>
     </div>
 </template>
 
 <script>
+
 
 export default {
     components: {
