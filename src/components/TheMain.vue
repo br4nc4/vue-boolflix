@@ -16,6 +16,11 @@
                 <li> <h5> Original Title </h5> </li>
                 <li v-for="(movie, i) in moviesList" :key="i">{{movie.original_title}}</li>
             </ul>
+
+            <ul class="list-unstyled">
+                <li> <h5> Original Language </h5> </li>
+                <li v-for="(movie, i) in moviesList" :key="i">{{movie.original_language}}</li>
+            </ul>
         </div>
 
         <div id="seriesList">

@@ -34,12 +34,9 @@ export default {
         
         },
         onSearchMovie(searchText){
-          this.fetchData(searchText)
+          this.fetchData(searchText);
         }
     },
-    mounted() {
-        this.fetchData()
-    }
 }
 </script>
 
