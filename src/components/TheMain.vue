@@ -19,9 +19,15 @@
                     <li v-for="(movie, i) in moviesList" :key="i">{{movie.original_title}}</li>
                 </ul>
 
-                <ul class="list-unstyled">
+                <!-- <ul class="list-unstyled">
                     <li> <h5> Language </h5> </li>
                     <li v-for="(movie, i) in moviesList" :key="i">{{movie.original_language}}</li>
+                </ul>  -->
+                <ul class="list-unstyled">
+                    <li> <h5>Flag</h5> </li>
+                    <li>
+                        <lang-flag class="d-flex flex-column" v-for="(movie, i) in moviesList" :key="i" :iso="movie.original_language"/>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -40,10 +46,14 @@
 
 <script>
 import axios from "axios";
+import LangFlag from 'vue-lang-code-flags';
 
 export default {
     props: {
         inputText: String,
+    },
+    components:{
+        LangFlag,
     },
     data() {
         return {
