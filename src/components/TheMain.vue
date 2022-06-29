@@ -24,17 +24,50 @@
         </div>
 
         <div id="seriesList">
-
+            <ul class="list-unstyled">
+                <li> <h5>Name</h5> </li>
+                <li v-for="(serie, i) in seriesList" :key="i">{{serie.name}}</li>
+            </ul>
         </div>
     </div>
 </template>
 
 <script>
+import axios from "axios";
 
 export default {
     props: {
-        moviesList: Array,
+        inputText: String,
     },
+    data() {
+        return {
+            moviesList: [],
+            seriesList: [],
+        }
+    },
+    methods: {
+        fetchData(type) {
+            axios.get("https://api.themoviedb.org/3/search/" + type, {
+            params: {
+                api_key: "d43e4619fd253e9bace6c00412169652",
+                query: this.inputText,
+            },
+        })
+        .then((resp) => {
+            if(type === "movie"){
+                this.moviesList = resp.data.results;
+            } else if (type === "tv") {
+                this.seriesList = resp.data.results;
+            }
+        })
+        },
+    },
+    watch: {
+        inputText() {
+            this.fetchData("movie")
+            this.fetchData("tv")
+        }
+    }
 }
 </script>
 

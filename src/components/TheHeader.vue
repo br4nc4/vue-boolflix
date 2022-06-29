@@ -1,7 +1,7 @@
 <template>
     <form class="input-group mb-3">
         <input type="text" class="form-control"
-        placeholder="search movie" 
+        placeholder="search movie and series" 
         aria-describedby="button-addon2"
         v-model="searchText">
         <button class="btn btn-outline-secondary" type="button" 
