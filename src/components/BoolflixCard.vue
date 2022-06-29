@@ -14,7 +14,7 @@
 import LangFlag from 'vue-lang-code-flags';
 export default {
     props: {
-        movie: Array,
+        movie: Object,
     },
     components: {
         LangFlag,
