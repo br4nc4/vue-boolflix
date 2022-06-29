@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h4 class="text-center">FILMS</h4>
+        <h2 class="text-center">FILMS</h2>
         <div class="row row-cols-5">
             <div class="col" v-for="movie in moviesList" :key="movie.id">
                 <BoolflixCard :movie="movie"></BoolflixCard>
@@ -35,7 +35,7 @@
         </div>
 
         <div>
-            <h4 class="text-center">SERIES</h4>
+            <h2 class="text-center">SERIES</h2>
             <div class="row row-cols-5">
                 <div class="col" v-for="serie in seriesList" :key="serie.id">
                     <BoolflixCard :movie="serie"></BoolflixCard>

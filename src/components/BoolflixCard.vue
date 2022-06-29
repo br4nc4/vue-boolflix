@@ -25,10 +25,14 @@ export default {
             imgUrl: "https://image.tmdb.org/t/p/",
             imgDim: "w185",
             imgPath: this.movie.poster_path,
+            errorImg: "/img/noimage.jpg",
         }
     },
     computed: {
         posterImage() {
+            if(!this.imgPath){
+                return this.errorImg;
+            }
             return this.imgUrl + this.imgDim + this.imgPath;
         },
         titleCategory(){
@@ -44,7 +48,7 @@ export default {
                 return "Film Title"
             }
         }
-    }
+    },
 }
 </script>
 
