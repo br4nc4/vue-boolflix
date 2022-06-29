@@ -39,7 +39,7 @@ export default {
         },
         htmlTitle(){
             if (this.movie.name) {
-                return "Serie Title"
+                return "Series Title"
             } else {
                 return "Film Title"
             }
