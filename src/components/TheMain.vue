@@ -28,7 +28,7 @@
 
 export default {
     props: {
-        moviesList: Object,
+        moviesList: Array,
     },
 }
 </script>
@@ -36,5 +36,6 @@ export default {
 <style lang="scss">
     #moviesList{
         display: flex;
+        gap: 3rem;
     }
 </style>

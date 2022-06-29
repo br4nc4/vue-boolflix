@@ -29,7 +29,7 @@ export default {
             },
         })
         .then((resp) => {
-            this.moviesList.push(...resp.data.results);
+            this.moviesList = resp.data.results;
         })
         
         },
