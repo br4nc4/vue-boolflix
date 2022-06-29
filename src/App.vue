@@ -1,7 +1,9 @@
 <template>
   <div>
-    <TheHeader @searchMovie="onSearchMovie"></TheHeader>
-    <TheMain :input-text="inputText"></TheMain>
+    <div class="container">
+      <TheHeader @searchMovie="onSearchMovie"></TheHeader>
+      <TheMain :input-text="inputText"></TheMain>
+    </div>
   </div>
 </template>
 
