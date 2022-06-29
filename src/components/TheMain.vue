@@ -1,33 +1,39 @@
 <template>
     <div>
-        <div id="moviesList"> 
+        <div> 
             <!-- STAMPARE CARD PER OGNI FILM -->
-            <ul class="list-unstyled">
-                <li> <h5>Title</h5> </li>
-                <li v-for="(movie, i) in moviesList" :key="i">{{movie.title}}</li>
-            </ul>
+            <h4>FILMS</h4>
+            <div id="moviesList">
+                <ul class="list-unstyled">
+                    <li> <h5>Title</h5> </li>
+                    <li v-for="(movie, i) in moviesList" :key="i">{{movie.title}}</li>
+                </ul>
 
-            <ul class="list-unstyled">
-                <li> <h5> Vote </h5> </li>
-                <li v-for="(movie, i) in moviesList" :key="i">{{movie.vote_average}}</li>
-            </ul>
+                <ul class="list-unstyled">
+                    <li> <h5> Vote </h5> </li>
+                    <li v-for="(movie, i) in moviesList" :key="i">{{movie.vote_average}}</li>
+                </ul>
 
-            <ul class="list-unstyled">
-                <li> <h5> Original Title </h5> </li>
-                <li v-for="(movie, i) in moviesList" :key="i">{{movie.original_title}}</li>
-            </ul>
+                <ul class="list-unstyled">
+                    <li> <h5> Original Title </h5> </li>
+                    <li v-for="(movie, i) in moviesList" :key="i">{{movie.original_title}}</li>
+                </ul>
 
-            <ul class="list-unstyled">
-                <li> <h5> Original Language </h5> </li>
-                <li v-for="(movie, i) in moviesList" :key="i">{{movie.original_language}}</li>
-            </ul>
+                <ul class="list-unstyled">
+                    <li> <h5> Original Language </h5> </li>
+                    <li v-for="(movie, i) in moviesList" :key="i">{{movie.original_language}}</li>
+                </ul>
+            </div>
         </div>
 
-        <div id="seriesList">
-            <ul class="list-unstyled">
-                <li> <h5>Name</h5> </li>
-                <li v-for="(serie, i) in seriesList" :key="i">{{serie.name}}</li>
-            </ul>
+        <div>
+            <h4>SERIES</h4>
+            <div id="seriesList">
+                <ul class="list-unstyled">
+                    <li> <h5>Name</h5> </li>
+                    <li v-for="(serie, i) in seriesList" :key="i">{{serie.name}}</li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -75,5 +81,8 @@ export default {
     #moviesList{
         display: flex;
         gap: 3rem;
+    }
+    #seriesList{
+        display: flex;
     }
 </style>
