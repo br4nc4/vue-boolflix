@@ -36,6 +36,11 @@
 
         <div>
             <h4 class="text-center">SERIES</h4>
+            <div class="row row-cols-5">
+                <div class="col" v-for="serie in seriesList" :key="serie.id">
+                    <BoolflixCard :movie="serie"></BoolflixCard>
+                </div>
+            </div>
             <!-- <div id="seriesList">
                 <ul class="list-unstyled">
                     <li> <h5>Name</h5> </li>
