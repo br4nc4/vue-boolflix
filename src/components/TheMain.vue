@@ -20,7 +20,7 @@
                 </ul>
 
                 <ul class="list-unstyled">
-                    <li> <h5> Original Language </h5> </li>
+                    <li> <h5> Language </h5> </li>
                     <li v-for="(movie, i) in moviesList" :key="i">{{movie.original_language}}</li>
                 </ul>
             </div>
