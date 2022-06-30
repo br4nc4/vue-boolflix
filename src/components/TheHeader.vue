@@ -1,15 +1,15 @@
 <template>
     <div class="bgHeader p-2">
-        <form class="d-flex justify-content-between align-items-center">
+        <form @submit.prevent="onSubmit" class="d-flex justify-content-between align-items-center">
             <img class="logoDim" src="/img/logo.png" alt="">
             <div class="d-flex input-group-sm h-50">
-                <input type="text" class="form-control"
+                <input @keydown.enter="onSearchClick" type="text" class="form-control"
                 placeholder="search movies and series" 
                 aria-describedby="button-addon2 inputGroup-sizing-sm"
                 v-model="searchText">
-                <button class="btn btn-primary" type="button" 
+                <!-- <button class="btn btn-primary" type="button" 
                 id="button-addon2"
-                @click="onSearchClick">Search</button>
+                @click="onSearchClick">Search</button> -->
             </div>
         </form>
     </div>
@@ -29,6 +29,7 @@ export default {
     methods: {
         onSearchClick() {
             this.$emit("searchMovie", this.searchText);
+            this.searchText = "";
         }
     },
 }
