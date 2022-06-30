@@ -1,7 +1,7 @@
 <template>
-    <div class="card">
+    <div class="card posterCard">
         <img class="card-img-top" :src="posterImage" alt="">
-        <div class="card-body">
+        <div class="card-body overlay">
             <h5 class="card-title">{{htmlTitle}}</h5>
             <p class="card-text text-uppercase"> {{titleCategory}} </p>
             <h5 class="card-title">Country</h5>
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import LangFlag from 'vue-lang-code-flags';
-import MovieRating from './MovieRating.vue';
+import LangFlag from 'vue-lang-code-flags'; 
+import MovieRating from './MovieRating.vue'; 
 
 
 export default {
@@ -24,8 +24,8 @@ export default {
         serie: Object,
     },
     components: {
-    LangFlag,
-    MovieRating
+        LangFlag,
+        MovieRating, 
 },
     data() {
         return {
@@ -60,6 +60,24 @@ export default {
 </script>
 
 <style lang="scss">
+    .posterCard{
+        position: relative;
+        &:hover{
+            .card-body.overlay{
+                opacity: 1;
+            }
+        }
+    }
 
+    .card-body.overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+    }
 
 </style>
