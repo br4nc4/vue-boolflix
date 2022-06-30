@@ -1,17 +1,20 @@
 <template>
     <div class="card posterCard">
         <img class="card-img-top" :src="posterImage" alt="">
-        <div class="card-body overlay">
-            <p class="text-white fw-bold mb-0">Titolo: 
+        <div class="card-body overlay overflow-auto">
+            <p class="text-white fw-bold mb-0">Title: 
                 <span class="text-white fw-normal"> {{titleCategory}} </span> 
             </p>
-            <p class="text-white fw-bold mb-0">Titolo Originale: 
+            <p class="text-white fw-bold mb-0">Original Title: 
                 <span class="text-white fw-normal"> {{originalTitleCategory}} </span> 
             </p>
             <div class="d-flex">
-                <p class="text-white fw-bold mb-0">Voto: </p>
+                <p class="text-white fw-bold mb-0">Vote: </p>
                 <MovieRating :vote="movie.vote_average"></MovieRating>
             </div>
+            <p class="text-white fw-bold mb-0 lh-1">Overview: 
+                <span class="text-white fw-normal"> {{movie.overview}} </span> 
+            </p>
             <!-- <h5 class="card-title text-white">Country</h5>
             <lang-flag :iso="movie.original_language"/> -->
         </div>
