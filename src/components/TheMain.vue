@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bgMain">
         <h2 class="text-center">FILMS</h2>
         <div class="row row-cols-5">
             <div class="col" v-for="movie in moviesList" :key="movie.id">
@@ -102,5 +102,8 @@ export default {
     }
     #seriesList{
         display: flex;
+    }
+    .bgMain{
+        background-color: #434343;
     }
 </style>

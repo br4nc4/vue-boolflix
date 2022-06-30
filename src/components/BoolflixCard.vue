@@ -77,7 +77,7 @@ export default {
         bottom: 0;
         background-color: white;
         opacity: 0;
-        transition: opacity .2s ease-in-out;
+        transition: opacity .1s ease-in-out;
     }
 
 </style>
