@@ -2,12 +2,11 @@
     <div class="card posterCard">
         <img class="card-img-top" :src="posterImage" alt="">
         <div class="card-body overlay">
-            <h5 class="card-title">{{htmlTitle}}</h5>
-            <p class="card-text text-uppercase"> {{titleCategory}} </p>
-            <h5 class="card-title">Country</h5>
+            <h5 class="card-title text-white">{{htmlTitle}}</h5>
+            <p class="card-text text-uppercase text-white"> {{titleCategory}} </p>
+            <h5 class="card-title text-white">Country</h5>
             <lang-flag :iso="movie.original_language"/>
-            <h5 class="card-title">Vote</h5>
-
+            <h5 class="card-title text-white">Vote</h5>
             <MovieRating :vote="movie.vote_average"></MovieRating>
         </div>
     </div>
@@ -75,9 +74,9 @@ export default {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: white;
+        background-color: black;
         opacity: 0;
-        transition: opacity .1s ease-in-out;
+        transition: opacity .2s ease-in-out;
     }
 
 </style>

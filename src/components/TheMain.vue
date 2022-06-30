@@ -1,7 +1,7 @@
 <template>
-    <div class="bgMain">
-        <h2 class="text-center">FILMS</h2>
-        <div class="row row-cols-5">
+    <div class="bgMain px-3 py-4">
+        <h2 class="text-center text-white">FILMS</h2>
+        <div class="row row-cols-5 g-4">
             <div class="col" v-for="movie in moviesList" :key="movie.id">
                 <BoolflixCard :movie="movie"></BoolflixCard>
             </div>
@@ -35,8 +35,8 @@
         </div>
 
         <div>
-            <h2 class="text-center">SERIES</h2>
-            <div class="row row-cols-5">
+            <h2 class="text-center text-white">SERIES</h2>
+            <div class="row row-cols-5 g-4">
                 <div class="col" v-for="serie in seriesList" :key="serie.id">
                     <BoolflixCard :movie="serie"></BoolflixCard>
                 </div>
