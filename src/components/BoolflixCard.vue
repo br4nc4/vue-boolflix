@@ -2,18 +2,24 @@
     <div class="card posterCard">
         <img class="card-img-top" :src="posterImage" alt="">
         <div class="card-body overlay">
-            <h5 class="card-title text-white">{{htmlTitle}}</h5>
-            <p class="card-text text-uppercase text-white"> {{titleCategory}} </p>
-            <h5 class="card-title text-white">Country</h5>
-            <lang-flag :iso="movie.original_language"/>
-            <h5 class="card-title text-white">Vote</h5>
-            <MovieRating :vote="movie.vote_average"></MovieRating>
+            <p class="text-white fw-bold mb-0">Titolo: 
+                <span class="text-white fw-normal"> {{titleCategory}} </span> 
+            </p>
+            <p class="text-white fw-bold mb-0">Titolo Originale: 
+                <span class="text-white fw-normal"> {{originalTitleCategory}} </span> 
+            </p>
+            <div class="d-flex">
+                <p class="text-white fw-bold mb-0">Voto: </p>
+                <MovieRating :vote="movie.vote_average"></MovieRating>
+            </div>
+            <!-- <h5 class="card-title text-white">Country</h5>
+            <lang-flag :iso="movie.original_language"/> -->
         </div>
     </div>
 </template>
 
 <script>
-import LangFlag from 'vue-lang-code-flags'; 
+/* import LangFlag from 'vue-lang-code-flags'; */ 
 import MovieRating from './MovieRating.vue'; 
 
 
@@ -23,7 +29,7 @@ export default {
         serie: Object,
     },
     components: {
-        LangFlag,
+        /* LangFlag, */
         MovieRating, 
 },
     data() {
@@ -47,13 +53,19 @@ export default {
             } 
             return this.movie.title;
         },
-        htmlTitle(){
+        originalTitleCategory() {
+            if (this.movie.original_name) {
+                return this.movie.original_name;
+            }
+            return this.movie.original_title;
+        }
+        /* htmlTitle(){
             if (this.movie.name) {
                 return "Series Title"
             } else {
                 return "Film Title"
             }
-        },
+        }, */
     },
 }
 </script>
