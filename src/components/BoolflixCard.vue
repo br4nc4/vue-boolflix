@@ -6,20 +6,27 @@
             <p class="card-text text-uppercase"> {{titleCategory}} </p>
             <h5 class="card-title">Country</h5>
             <lang-flag :iso="movie.original_language"/>
+            <h5 class="card-title">Vote</h5>
+
+            <MovieRating :vote="movie.vote_average"></MovieRating>
         </div>
     </div>
 </template>
 
 <script>
 import LangFlag from 'vue-lang-code-flags';
+import MovieRating from './MovieRating.vue';
+
+
 export default {
     props: {
         movie: Object,
         serie: Object,
     },
     components: {
-        LangFlag,
-    },
+    LangFlag,
+    MovieRating
+},
     data() {
         return {
             imgUrl: "https://image.tmdb.org/t/p/",
@@ -47,11 +54,12 @@ export default {
             } else {
                 return "Film Title"
             }
-        }
+        },
     },
 }
 </script>
 
 <style lang="scss">
+
 
 </style>
